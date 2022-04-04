@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Akan Name</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" href="assets/fonts/material-design-iconic-font/css/material-design-iconic-font.css">
+
+		<link rel="stylesheet" href="assets/css/style1.css">
+		
+	</head>
+	<body>
+		<div class="wrapper">
+            <form action="index.html" id="wizard" method="post">
+        		<!-- GENDER -->
+                <h2></h2>
+                <section>
+                    <div class="inner">
+						<div class="image-holder">
+							<img src="https://media.istockphoto.com/photos/happy-african-woman-with-a-yellow-wall-in-the-background-picture-id1289922294?k=20&m=1289922294&s=612x612&w=0&h=B67_WsQUj4WARwbRgum1PulEJt6lhLVtMuYkgdeD1sM=" 
+							alt=""
+							style="height: 100%;">
+						</div>
+						<div class="form-content" >
+							<div class="form-header">
+								<h3>Discover Your Akan Name</h3>	
+							</div>
+							<p>Input Your Gender</p>
+							<div class="form-row">
+								<div class="form-holder" style="align-self: flex-start; transform: translateY(4px); padding-left:40%;">
+									<div class="checkbox-tick">
+										<label class="male">
+											<input type="radio" name="gender" id="gender" value="male" > Male<br>
+											<span class="checkmark"></span>
+										</label>
+										<label class="female">
+											<input type="radio" name="gender" id="gender" value="female"> Female<br>
+											<span class="checkmark"></span>
+										</label>
+									</div>
+								</div>
+							</div>
+							<div class="form-holder">
+								<label>
+									<p>Your one step away from learning your akan name.</p> 
+								</label>
+							</div>
+						</div>
+					</div>
+                </section>
+
+				<!-- DATE OF BIRTH -->
+                <h2></h2>
+                <section>
+					
+                    <div class="inner">
+						<div class="image-holder">
+							<img src="https://images.unsplash.com/photo-1562715517-ce49b9617d26?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YWZyaWNhbiUyMGtpbmd8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" 
+							alt=""
+							style="height: 100%;">
+						</div>
+						<div class="form-content">
+							<div class="form-header">
+								<h3>Discover Your Akan Name</h3>	
+							</div>
+							<p>Fill in your date of birth</p>
+							<div class="form-row">
+								<div class="form-holder w-100">
+									<input type="date" placeholder="Date of Birth" name="dob" id="dob" class="form-control">
+								</div>
+							</div>
+						</div>
+					</div>
+                </section>
+
+               
+            </form>
+			
+			<!-- AKAN NAME -->
+			<h2></h2>
+			<section>
+				<form id="result">
+				   <div class="inner">
+					   <div class="image-holder">
+						   <img src="https://media.istockphoto.com/photos/group-of-christen-near-a-banjo-picture-id157189595?k=20&m=157189595&s=612x612&w=0&h=S_EnqpgjZKU1OsOCxReCGx37aXn9rMTi5exhRgGzuLg=
+						   "
+						   style="height: 100%;" 
+						   alt="">
+					   </div>
+					   <div class="form-content">
+						   <div class="form-header">
+							   <h3>Discover Your Akan Name</h3>	
+						   </div>
+						   <p>Congratulations! Your Akan Name is: </p>
+						   <div class="form-row">
+							   <div class="form-holder w-100">
+								   <p id="akaname" class="form-control" style="height: 80px; font-size: 75px; color: yellowgreen;"></p>
+								  
+							   </div>
+						   </div>
+						   <div class="form-row">
+							
+						</div>
+						   <div class="form-row">
+							<div class="form-holder w-100">
+								<a href="index.html" name="home" id="home-btn" style="color: black; font-size: 20px; padding-left: 40%;">Home</a>
+							</div>
+						</div>
+						<div class="form-row">
+							<div class="form-holder w-100">
+								<a href="akaname.html" name="home" id="home-btn" style="color: black; font-size: 20px; padding-left: 40%;">Try again</a>
+							</div>
+						</div>
+						
+					   </div>
+				   </div>
+				</form>
+				
+			</section>
+		</div>
+
+		<!-- JQUERY -->
+		<script src="assets/js/jquery-3.3.1.min.js"></script>
+		<!-- JQUERY STEP -->
+		<script src="assets/js/jquery.steps.js"></script>
+		
+
+	<script type="text/javascript">
+	$(function(){
+    $("#wizard").steps({
+        headerTag: "h2",
+        bodyTag: "section",
+        transitionEffect: "fade",
+        enableAllSteps: true,
+        transitionEffectSpeed: 500,
+        labels: {
+            finish: "Submit",
+            next: "Next",
+            previous: "Back"
+        }
+    });	
+
+    $('#wizard').show(function(){
+        $('#result').hide();
+    });
+
+    $('#wizard').submit(function(event){
+        $('#wizard').hide();
+        $('#result').show();
+        var x=$('#wizard').serializeArray();
+        var gender= x[0].value;
+        var dob= new Date(x[1].value);
+        var day=dob.getDay();
+        var akaname;
+
+        if(gender=="male"){
+            if(day==0){
+                akaname="Kwasi";
+            }else if(day==1){
+                akaname="Kwadwo";
+            }else if(day==2){
+                akaname="Kwabena";
+            }else if(day==3){
+                akaname="Kwaku";
+            }else if(day==4){
+                akaname="Yaw";
+            }else if(day==5){
+                akaname="Kofi";
+            }else if(day==6){
+                akaname="Kwame";
+            }
+        }else if(gender=="female"){
+            if(day==0){
+                akaname="Akosua";
+            }else if(day==1){
+                akaname="Adwoa";
+            }else if(day==2){
+                akaname="Abenaa";
+            }else if(day==3){
+                akaname="Akua";
+            }else if(day==4){
+                akaname="Yaa";
+            }else if(day==5){
+                akaname="Afua";
+            }else if(day==6){
+                akaname="Ama";
+            }
+        }else{
+			akaname= "wrong inputs";
+		}
+
+        $('#akaname').append(akaname);
+        console.log(akaname);
+        event.preventDefault();
+      });
+      
+    $('[href="#finish"]').click(function() {
+        $('#wizard').submit();
+    });
+    
+    $('.wizard > .steps li a').click(function(){
+        $(this).parent().addClass('checked');
+        $(this).parent().prevAll().addClass('checked');
+        $(this).parent().nextAll().removeClass('checked');
+    });
+    // Custome Jquery Step Button
+    $('.forward').click(function(){
+        $("#wizard").steps('next');
+    })
+    $('.backward').click(function(){
+        $("#wizard").steps('previous');
+    })
+
+    // Select Dropdown
+    $('html').click(function() {
+        $('.select .dropdown').hide(); 
+    });
+    $('.select').click(function(event){
+        event.stopPropagation();
+    });
+    $('.select .select-control').click(function(){
+        $(this).parent().next().toggle();
+    })    
+    $('.select .dropdown li').click(function(){
+        $(this).parent().toggle();
+        var text = $(this).attr('rel');
+        $(this).parent().prev().find('div').text(text);
+    })
+    
+})
+	</script>	
+
+</body>
+</html>
